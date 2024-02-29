@@ -5,8 +5,18 @@ interface StandingItem {
   position: number;
   team: {
     name: string;
+    shortName: string;
+    tla: string;
+    crest: string;
   };
+  playedGames: number;
+  won: number;
+  draw: number;
+  lost: number;
   points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
 }
 
 export default function Standings() {
@@ -38,7 +48,10 @@ export default function Standings() {
         {standings.map((item: StandingItem, index: number) => (
           <View key={index} style={styles.row}>
             <Text style={styles.cell}>{item.position}</Text>
-            <Text style={styles.cell}>{item.team.name}</Text>
+            <Text style={styles.cell}>{item.team.tla}</Text>
+            <Text style={styles.cell}>{item.won}</Text>
+            <Text style={styles.cell}>{item.draw}</Text>
+            <Text style={styles.cell}>{item.lost}</Text>
             <Text style={styles.cell}>{item.points}</Text>
           </View>
         ))}

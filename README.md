@@ -1,13 +1,15 @@
 # Football App (React Native)
 
 ## About The Project
-This football app provides real-time scores, fixtures, and standings of various football leagues around the world. Designed with a user-friendly interface, it offers football fans a comprehensive and engaging experience.
+This football app provides Premier League's real-time scores, fixtures, and standings of various football leagues around the world. Designed with a user-friendly interface, it offers football fans a comprehensive and engaging experience.
 
 ### Features
-- Real-time football scores and updates
-- League standings and upcoming fixtures
-- Detailed match information, including line-ups, statistics, and live commentary
-- Personalized notifications for favorite teams and matches
+- __Latest News__: Get real-time updates and news articles about Premier League teams, players, and coaches.
+- __Match Fixtures__: View upcoming match schedules, times, and dates to never miss a game.
+- __Scores and Updates__: Follow match scores, commentary, and highlights.
+- __League Tables__: Check out the current standings of all Premier League teams in the league table.
+- __Player and Team Statistics__: Dive into detailed statistics for players and teams, including goals, assists, defensive records, and more.
+- __Notifications__: Opt-in for push notifications to receive alerts about your favorite teams and important matches.
 
 ## Getting Started
 
