@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyleSheet, ScrollView, View, Text } from "react-native";
+import NotFoundScreen from "../+not-found";
 
 interface StandingItem {
   position: number;
@@ -26,7 +27,8 @@ export default function Standings() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://football-standings-backend-9c023af5d229.herokuapp.com/standings/PL"
+          // "https://football-standings-backend-9c023af5d229.herokuapp.com/standings/PL"
+          "https://not-exist-testing.com"
         );
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -44,7 +46,10 @@ export default function Standings() {
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.title}>Standings</Text>
-      <View style={styles.table}>
+      {standings.length === 0 ? (
+        <NotFoundScreen />
+      ) : (
+        <View style={styles.table}>
         {standings.map((item: StandingItem, index: number) => (
           <View key={index} style={styles.row}>
             <Text style={styles.cell}>{item.position}</Text>
@@ -56,6 +61,7 @@ export default function Standings() {
           </View>
         ))}
       </View>
+      )}
     </ScrollView>
   );
 }
