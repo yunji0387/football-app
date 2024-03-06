@@ -1,10 +1,21 @@
 import { Tabs } from "expo-router";
-import { View, Text, Platform } from "react-native";
+import { StyleSheet, View, Text, Platform } from "react-native";
 import { Image } from "expo-image";
 import icons from "../../constants/icons";
 import { COLORS } from "@/constants/theme";
 
 export default function TabLayout() {
+  const getTabBarIconContainerStyle = (focused: boolean) => ({
+    ...styles.tabIconContainer, // Spread the static styles
+    borderTopColor: focused ? COLORS.secondary : COLORS.grey,
+    borderTopWidth: 2,
+  });
+
+  const getTabLabelStyle = (focused: boolean) => ({
+    ...styles.tabLabel, // Spread the static styles
+    color: focused ? COLORS.white : COLORS.grey,
+  });
+
   return (
     <Tabs
       screenOptions={{
@@ -13,11 +24,11 @@ export default function TabLayout() {
           position: "absolute",
           backgroundColor: COLORS.primary,
           borderTopColor: COLORS.grey,
-          borderTopWidth: 1,
+          borderTopWidth: 2,
           bottom: 0,
           right: 0,
           left: 0,
-          height: 50,
+          height: 72,
           elevation: 0,
         },
       }}
@@ -28,35 +39,13 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
-              <View
-                style={{
-                  alignItems: "center",
-                  // justifyContent: "center",
-                  paddingTop: 5,
-                  borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-                  borderTopWidth: focused ? 2 : 1,
-                }}
-              >
+              <View style={getTabBarIconContainerStyle(focused)}>
                 <Image
                   source={icons.news}
                   contentFit="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                    // tintColor: focused ? COLORS.white : undefined,
-                  }}
+                  style={styles.tabIcon}
                 />
-                <Text
-                  style={{
-                    color: focused ? COLORS.white : COLORS.grey,
-                    fontSize: 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: 20,
-                  }}
-                >
-                  News
-                </Text>
+                <Text style={getTabLabelStyle(focused)}>News</Text>
               </View>
             );
           },
@@ -69,33 +58,13 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
-              <View
-                style={{
-                  alignItems: "center",
-                  paddingTop: 5,
-                  borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-                  borderTopWidth: focused ? 2 : 1,
-                }}
-              >
+              <View style={getTabBarIconContainerStyle(focused)}>
                 <Image
                   source={icons.match}
                   contentFit="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                  }}
+                  style={styles.tabIcon}
                 />
-                <Text
-                  style={{
-                    color: focused ? COLORS.white : COLORS.grey,
-                    fontSize: 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: 20,
-                  }}
-                >
-                  Match
-                </Text>
+                <Text style={getTabLabelStyle(focused)}>Match</Text>
               </View>
             );
           },
@@ -108,33 +77,13 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
-              <View
-                style={{
-                  alignItems: "center",
-                  paddingTop: 5,
-                  borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-                  borderTopWidth: focused ? 2 : 1,
-                }}
-              >
+              <View style={getTabBarIconContainerStyle(focused)}>
                 <Image
                   source={icons.latest}
                   contentFit="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                  }}
+                  style={styles.tabIcon}
                 />
-                <Text
-                  style={{
-                    color: focused ? COLORS.white : COLORS.grey,
-                    fontSize: 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: 20,
-                  }}
-                >
-                  Latest
-                </Text>
+                <Text style={getTabLabelStyle(focused)}>Latest</Text>
               </View>
             );
           },
@@ -147,72 +96,32 @@ export default function TabLayout() {
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
-              <View
-                style={{
-                  alignItems: "center",
-                  paddingTop: 5,
-                  borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-                  borderTopWidth: focused ? 2 : 1,
-                }}
-              >
+              <View style={getTabBarIconContainerStyle(focused)}>
                 <Image
                   source={icons.stats}
                   contentFit="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                  }}
+                  style={styles.tabIcon}
                 />
-                <Text
-                  style={{
-                    color: focused ? COLORS.white : COLORS.grey,
-                    fontSize: 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: 20,
-                  }}
-                >
-                  Stats
-                </Text>
+                <Text style={getTabLabelStyle(focused)}>Stats</Text>
               </View>
             );
           },
         }}
       />
 
-<Tabs.Screen
+      <Tabs.Screen
         name="more"
         options={{
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
             return (
-              <View
-                style={{
-                  alignItems: "center",
-                  paddingTop: 5,
-                  borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-                  borderTopWidth: focused ? 2 : 1,
-                }}
-              >
+              <View style={getTabBarIconContainerStyle(focused)}>
                 <Image
                   source={icons.more}
                   contentFit="contain"
-                  style={{
-                    width: 25,
-                    height: 25,
-                  }}
+                  style={styles.tabIcon}
                 />
-                <Text
-                  style={{
-                    color: focused ? COLORS.white : COLORS.grey,
-                    fontSize: 12,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    height: 20,
-                  }}
-                >
-                  More
-                </Text>
+                <Text style={getTabLabelStyle(focused)}>More</Text>
               </View>
             );
           },
@@ -221,6 +130,45 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabIconContainer: {
+    alignItems: "center",
+    paddingTop: 7,
+  },
+  tabIcon: {
+    width: 32,
+    height: 32,
+  },
+  tabLabel: {
+    fontSize: 12,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});
+
+// const styles = StyleSheet.create({
+//   viewStyle: {
+//     alignItems: "center",
+//     justifyContent: "flex-end",
+//     flex: 1,
+//     backgroundColor: COLORS.grey,
+//     // paddingTop: 5,
+//   },
+//   imageStyle: {
+//     width: 32,
+//     height: 32,
+//     // backgroundColor: COLORS.grey,
+//     // tintColor: focused ? COLORS.white : undefined,
+//   },
+//   textStyle: {
+//     fontSize: 12,
+//     // height: 20,
+//     // backgroundColor: COLORS.grey,
+//   },
+// });
+
+//---------------
 
 // import React from "react";
 // import FontAwesome from "@expo/vector-icons/FontAwesome";
