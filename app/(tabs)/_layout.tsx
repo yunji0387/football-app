@@ -6,13 +6,18 @@ import { COLORS } from "@/constants/theme";
 
 export default function TabLayout() {
   const getTabBarIconContainerStyle = (focused: boolean) => ({
-    ...styles.tabIconContainer, // Spread the static styles
+    ...styles.tabIconContainer,
     borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-    borderTopWidth: 2,
+    borderTopWidth: focused ? 2 : 0,
+  });
+
+  const getTabIconStyle = (focused: boolean) => ({
+    ...styles.tabIcon,
+    tintColor: focused ? COLORS.white : COLORS.grey,
   });
 
   const getTabLabelStyle = (focused: boolean) => ({
-    ...styles.tabLabel, // Spread the static styles
+    ...styles.tabLabel,
     color: focused ? COLORS.white : COLORS.grey,
   });
 
@@ -24,10 +29,10 @@ export default function TabLayout() {
           position: "absolute",
           backgroundColor: COLORS.primary,
           borderTopColor: COLORS.grey,
-          borderTopWidth: 2,
-          bottom: 0,
-          right: 0,
-          left: 0,
+          borderTopWidth: 1,
+          // bottom: 0,
+          // right: 0,
+          // left: 0,
           height: 72,
           elevation: 0,
         },
@@ -43,7 +48,7 @@ export default function TabLayout() {
                 <Image
                   source={icons.news}
                   contentFit="contain"
-                  style={styles.tabIcon}
+                  style={getTabIconStyle(focused)}
                 />
                 <Text style={getTabLabelStyle(focused)}>News</Text>
               </View>
@@ -62,7 +67,7 @@ export default function TabLayout() {
                 <Image
                   source={icons.match}
                   contentFit="contain"
-                  style={styles.tabIcon}
+                  style={getTabIconStyle(focused)}
                 />
                 <Text style={getTabLabelStyle(focused)}>Match</Text>
               </View>
@@ -81,7 +86,7 @@ export default function TabLayout() {
                 <Image
                   source={icons.latest}
                   contentFit="contain"
-                  style={styles.tabIcon}
+                  style={getTabIconStyle(focused)}
                 />
                 <Text style={getTabLabelStyle(focused)}>Latest</Text>
               </View>
@@ -100,7 +105,7 @@ export default function TabLayout() {
                 <Image
                   source={icons.stats}
                   contentFit="contain"
-                  style={styles.tabIcon}
+                  style={getTabIconStyle(focused)}
                 />
                 <Text style={getTabLabelStyle(focused)}>Stats</Text>
               </View>
@@ -119,7 +124,7 @@ export default function TabLayout() {
                 <Image
                   source={icons.more}
                   contentFit="contain"
-                  style={styles.tabIcon}
+                  style={getTabIconStyle(focused)}
                 />
                 <Text style={getTabLabelStyle(focused)}>More</Text>
               </View>
@@ -133,14 +138,20 @@ export default function TabLayout() {
 
 const styles = StyleSheet.create({
   tabIconContainer: {
+    flex: 1,
     alignItems: "center",
-    paddingTop: 7,
+    justifyContent: "center",
+    // paddingTop: 7,
+    // height: 72,
+    // backgroundColor: COLORS.grey,
   },
   tabIcon: {
+    flex: 1,
     width: 32,
     height: 32,
   },
   tabLabel: {
+    // flex: 1,
     fontSize: 12,
     alignItems: "center",
     justifyContent: "center",
