@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { StyleSheet, View, Text, Platform } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import icons from "../../constants/icons";
 import { COLORS } from "@/constants/theme";
@@ -29,7 +29,7 @@ export default function TabLayout() {
           position: "absolute",
           backgroundColor: COLORS.primary,
           borderTopColor: COLORS.grey,
-          borderTopWidth: 1,
+          borderTopWidth: 2,
           // bottom: 0,
           // right: 0,
           // left: 0,
@@ -140,15 +140,20 @@ const styles = StyleSheet.create({
   tabIconContainer: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+    paddingTop: 6,
+    top: -2,
     // paddingTop: 7,
     // height: 72,
     // backgroundColor: COLORS.grey,
   },
   tabIcon: {
-    flex: 1,
+    // flex: 1,
+    // alignItems: "center",
+    // justifyContent: "space-between",
     width: 32,
     height: 32,
+    backgroundColor: 'blue',
   },
   tabLabel: {
     // flex: 1,
