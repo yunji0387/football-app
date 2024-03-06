@@ -1,7 +1,7 @@
 import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
-import { Pressable } from "react-native";
+import { StyleSheet, Pressable } from "react-native";
 
 import Colors from "@/constants/Colors";
 import { useColorScheme } from "@/components/useColorScheme";
@@ -31,7 +31,9 @@ export default function TabLayout() {
         name="standings"
         options={{
           title: "Standings",
-          tabBarIcon: ({ color }) => <TabBarIcon name="newspaper-o" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="newspaper-o" color={color} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -52,7 +54,9 @@ export default function TabLayout() {
         name="match"
         options={{
           title: "match",
-          tabBarIcon: ({ color }) => <TabBarIcon name="calendar-o" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="calendar-o" color={color} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -73,7 +77,9 @@ export default function TabLayout() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: ({ color }) => <TabBarIcon name="futbol-o" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="futbol-o" color={color} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -94,7 +100,9 @@ export default function TabLayout() {
         name="stats"
         options={{
           title: "Stats",
-          tabBarIcon: ({ color }) => <TabBarIcon name="area-chart" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="area-chart" color={color} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -115,7 +123,9 @@ export default function TabLayout() {
         name="more"
         options={{
           title: "More",
-          tabBarIcon: ({ color }) => <TabBarIcon name="ellipsis-v" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="ellipsis-v" color={color} />
+          ),
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -135,3 +145,18 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabBarStyle: {
+    borderTopColor: 'yellow', // Top stroke
+    borderTopWidth: 2,
+    elevation: 0,
+    shadowOpacity: 1,
+    shadowRadius: 0,
+    shadowOffset: {
+      width: 1,
+      height: 0,
+    },
+    shadowColor: 'yellow', // Yellow shadow
+  },
+});
