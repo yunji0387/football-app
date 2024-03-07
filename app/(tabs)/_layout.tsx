@@ -153,7 +153,6 @@ const styles = StyleSheet.create({
     // justifyContent: "space-between",
     width: 32,
     height: 32,
-    backgroundColor: 'blue',
   },
   tabLabel: {
     // flex: 1,
