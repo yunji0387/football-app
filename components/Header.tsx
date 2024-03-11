@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
+    gap: wp("1%"),
   },
   logoIcon: {
     width: 50,
