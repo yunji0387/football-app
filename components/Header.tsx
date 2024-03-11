@@ -28,7 +28,6 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    backgroundColor: "#3b5998",
     width: "100%",
     height: hp("10%"),
     alignItems: "center",
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
   logoIcon: {
     width: 50,
     height: 50,
-    // backgroundColor: "white",
   },
   titleContainer: {
     height: hp("4%"),
@@ -54,7 +52,6 @@ const styles = StyleSheet.create({
     fontSize: hp("3%"),
     fontWeight: "bold",
     color: "white",
-    textDecorationLine: "underline",
     textDecorationColor: COLORS.secondary,
   },
 });
