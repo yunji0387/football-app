@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
     gap: wp("1%"),
   },
   logoIcon: {
-    width: 50,
-    height: 50,
+    width: hp("7%"),
+    height: hp("7%"),
   },
   titleContainer: {
     height: hp("4%"),
-    borderBottomWidth: 3,
+    borderBottomWidth: hp("0.5%"),
     borderBottomColor: "yellow",
   },
   title: {
