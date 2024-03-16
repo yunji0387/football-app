@@ -2,13 +2,17 @@ import { Tabs } from "expo-router";
 import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import icons from "../../constants/icons";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 import { COLORS } from "@/constants/theme";
 
 export default function TabLayout() {
   const getTabBarIconContainerStyle = (focused: boolean) => ({
     ...styles.tabIconContainer,
     borderTopColor: focused ? COLORS.secondary : COLORS.grey,
-    borderTopWidth: focused ? 2 : 0,
+    borderTopWidth: focused ? hp("0.25%") : 0,
   });
 
   const getTabIconStyle = (focused: boolean) => ({
@@ -28,9 +32,10 @@ export default function TabLayout() {
         tabBarStyle: {
           position: "absolute",
           backgroundColor: COLORS.primary,
+          // backgroundColor: "blue",
           borderTopColor: COLORS.grey,
-          borderTopWidth: 2,
-          height: 72,
+          borderTopWidth: hp("0.25%"),
+          height: hp("8%"),
           elevation: 0,
         },
       }}
@@ -138,15 +143,15 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-    paddingTop: 6,
-    top: -2,
+    paddingTop: hp("0.5%"),
+    top: -hp("0.25%"),
   },
   tabIcon: {
-    width: 32,
-    height: 32,
+    width: hp("5%"),
+    height: hp("5%"),
   },
   tabLabel: {
-    fontSize: 12,
+    fontSize: hp("1.5%"),
     alignItems: "center",
     justifyContent: "center",
   },

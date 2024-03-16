@@ -7,10 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import {
-    widthPercentageToDP as wp,
-    heightPercentageToDP as hp,
-  } from "react-native-responsive-screen";
-  import { COLORS } from "@/constants/theme";
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
+import { Image } from "expo-image";
+import { COLORS } from "@/constants/theme";
 
 type MatchScore = {
   id: string;
@@ -103,14 +104,18 @@ const ScoreTicker = () => {
           style={styles.matchContainer}
           onPress={() => navigateToMatchDetail(match.id)}
         >
-          <Text style={styles.team}>{match.homeTeam}</Text>
-          <View style={styles.infoContainer}>
-            <Text
-              style={styles.score}
-            >{`${match.homeScore} - ${match.awayScore}`}</Text>
-            <Text style={styles.time}>{match.time}</Text>
+          <View style={{display:"flex", flexDirection:"row"}}>
+            <Text style={styles.team}>{match.homeTeam}</Text>
+            <View style={styles.infoContainer}>
+              <Text
+                style={styles.score}
+              >{`${match.homeScore} - ${match.awayScore}`}</Text>
+            </View>
+            <Text style={styles.team}>{match.awayTeam}</Text>
           </View>
-          <Text style={styles.team}>{match.awayTeam}</Text>
+          <Text style={styles.dateTime}>
+            {match.date}, {match.time}
+          </Text>
         </TouchableOpacity>
       ))}
     </ScrollView>
@@ -120,31 +125,30 @@ const ScoreTicker = () => {
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: "#f0f0f0",
-    height: hp("12%"),
+    height: hp("10%"),
   },
   matchContainer: {
     backgroundColor: "#fff",
-    borderRadius: 5,
     margin: hp("1%"),
     padding: hp("1%"),
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
-    height: hp("10%"),
+    justifyContent: "center",
+    height: hp("8%"),
   },
   infoContainer: {
     justifyContent: "center",
     alignItems: "center",
   },
   team: {
-    fontSize: 16,
+    fontSize: hp("2%"),
     fontWeight: "bold",
   },
   score: {
-    fontSize: 20,
-    // marginVertical: 5,
+    fontSize: hp("2%"),
   },
-  time: {
-    fontSize: 14,
+  dateTime: {
+    fontSize: hp("1.5%"),
   },
 });
 
