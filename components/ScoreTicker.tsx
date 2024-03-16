@@ -11,6 +11,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
+import icons from "../constants/icons";
 import { COLORS } from "@/constants/theme";
 
 type MatchScore = {
@@ -104,14 +105,28 @@ const ScoreTicker = () => {
           style={styles.matchContainer}
           onPress={() => navigateToMatchDetail(match.id)}
         >
-          <View style={{display:"flex", flexDirection:"row"}}>
-            <Text style={styles.team}>{match.homeTeam}</Text>
+          <View style={{ display: "flex", flexDirection: "row" }}>
+            {/* <Text style={styles.team}>{match.homeTeam}</Text> */}
+            <View style={styles.teamIconContainer}>
+              <Image
+                source={icons.logo}
+                contentFit="contain"
+                style={styles.teamIcon}
+              />
+            </View>
             <View style={styles.infoContainer}>
               <Text
                 style={styles.score}
               >{`${match.homeScore} - ${match.awayScore}`}</Text>
             </View>
-            <Text style={styles.team}>{match.awayTeam}</Text>
+            {/* <Text style={styles.team}>{match.awayTeam}</Text> */}
+            <View style={styles.teamIconContainer}>
+              <Image
+                source={icons.logo}
+                contentFit="contain"
+                style={styles.teamIcon}
+              />
+            </View>
           </View>
           <Text style={styles.dateTime}>
             {match.date}, {match.time}
@@ -124,17 +139,25 @@ const ScoreTicker = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#383332",
     height: hp("10%"),
   },
   matchContainer: {
-    backgroundColor: "#fff",
+    backgroundColor: COLORS.primary,
     margin: hp("1%"),
     padding: hp("1%"),
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     height: hp("8%"),
+    borderLeftWidth: hp("0.15%"),
+    borderTopWidth: hp("0.15%"),
+    borderRightWidth: hp("0.35%"),
+    borderBottomWidth: hp("0.35%"),
+    borderBottomColor: COLORS.secondary,
+    borderRightColor: COLORS.secondary,
+    borderTopColor: COLORS.white,
+    borderLeftColor: COLORS.white,
   },
   infoContainer: {
     justifyContent: "center",
@@ -146,9 +169,21 @@ const styles = StyleSheet.create({
   },
   score: {
     fontSize: hp("2%"),
+    fontWeight: "bold",
+    color: COLORS.white,
   },
   dateTime: {
     fontSize: hp("1.5%"),
+    color: COLORS.white,
+  },
+  teamIconContainer: {
+    paddingHorizontal: wp("1%"),
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  teamIcon: {
+    width: hp("5%"),
+    height: hp("5%"),
   },
 });
 
