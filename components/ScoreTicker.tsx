@@ -139,7 +139,6 @@ const ScoreTicker = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: "#383332",
     height: hp("10%"),
   },
   matchContainer: {

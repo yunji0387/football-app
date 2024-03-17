@@ -3,12 +3,14 @@ import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import Header from "@/components/Header";
 import ScoreTicker from "@/components/ScoreTicker";
+import SeeMoreButton from "@/components/SeeMoreBtn";
 
 export default function Home() {
   return (
     <View style={{ flex: 1 }}>
       <Header />
       <View style={styles.container}>
+        <SeeMoreButton to="match" />
         <ScoreTicker />
         <View style={styles.homeContainer}>
           <Text style={styles.title}>Home</Text>
