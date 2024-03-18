@@ -100,7 +100,7 @@ export default function FeatureArticleCarousel() {
         onSnapToItem={(index) => setActiveSlide(index)}
         vertical={false}
         autoplay={true}
-        loop={true}
+        // loop={true}
       />
       <Pagination
         dotsLength={articles.length}
