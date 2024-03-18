@@ -98,6 +98,9 @@ export default function FeatureArticleCarousel() {
         sliderWidth={screenWidth}
         itemWidth={screenWidth}
         onSnapToItem={(index) => setActiveSlide(index)}
+        vertical={false}
+        autoplay={true}
+        loop={true}
       />
       <Pagination
         dotsLength={articles.length}
@@ -108,7 +111,6 @@ export default function FeatureArticleCarousel() {
         inactiveDotStyle={styles.inactivePaginationDot}
         inactiveDotOpacity={0.4}
         inactiveDotScale={0.6}
-        tappableDots={true}
       />
     </View>
   );
