@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <SafeAreaView style={styles.flexContainer}>
       <View style={styles.flexContainer}>
-        {/* <Header /> */}
         <ScrollView
           style={styles.scrollView}
           contentContainerStyle={styles.contentContainer}
@@ -21,6 +20,7 @@ export default function Home() {
           <SeeMoreButton to="match" />
           <ScoreTicker />
           <FeatureArticleCarousel />
+          <SeeMoreButton to="standings" />
           <View style={styles.homeContainer}>
             <Text style={styles.title}>Home</Text>
             <View
@@ -62,57 +62,3 @@ const styles = StyleSheet.create({
     width: "80%",
   },
 });
-
-// import { ScrollView, StyleSheet } from "react-native";
-// import EditScreenInfo from "@/components/EditScreenInfo";
-// import { Text, View } from "@/components/Themed";
-// import Header from "@/components/Header";
-// import ScoreTicker from "@/components/ScoreTicker";
-// import SeeMoreButton from "@/components/SeeMoreBtn";
-// import FeatureArticleCarousel from "../../components/FeatureArticleCarousel";
-
-// export default function Home() {
-//   return (
-//     <View>
-//       <Header />
-//       <ScrollView>
-//         <View style={styles.container}>
-//           <SeeMoreButton to="match" />
-//           <ScoreTicker />
-//           <FeatureArticleCarousel />
-//           <View style={styles.homeContainer}>
-//             <Text style={styles.title}>Home</Text>
-//             <View
-//               style={styles.separator}
-//               lightColor="#eee"
-//               darkColor="rgba(255,255,255,0.1)"
-//             />
-//             <EditScreenInfo path="app/(tabs)/index.tsx" />
-//           </View>
-//         </View>
-//       </ScrollView>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     // flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-//   homeContainer: {
-//     // flex: 1,
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: "bold",
-//   },
-//   separator: {
-//     marginVertical: 30,
-//     height: 1,
-//     width: "80%",
-//   },
-// });
