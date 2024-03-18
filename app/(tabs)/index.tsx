@@ -1,17 +1,20 @@
-import { StyleSheet } from "react-native";
-import EditScreenInfo from "@/components/EditScreenInfo";
-import { Text, View } from "@/components/Themed";
-import Header from "@/components/Header";
-import ScoreTicker from "@/components/ScoreTicker";
-import SeeMoreButton from "@/components/SeeMoreBtn";
+import React from 'react';
+import { ScrollView, StyleSheet } from 'react-native';
+import EditScreenInfo from '@/components/EditScreenInfo';
+import { Text, View } from '@/components/Themed';
+import Header from '@/components/Header';
+import ScoreTicker from '@/components/ScoreTicker';
+import SeeMoreButton from '@/components/SeeMoreBtn';
+import FeatureArticleCarousel from '@/components/FeatureArticleCarousel';
 
 export default function Home() {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.flexContainer}>
       <Header />
-      <View style={styles.container}>
+      <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
         <SeeMoreButton to="match" />
         <ScoreTicker />
+        <FeatureArticleCarousel />
         <View style={styles.homeContainer}>
           <Text style={styles.title}>Home</Text>
           <View
@@ -21,29 +24,87 @@ export default function Home() {
           />
           <EditScreenInfo path="app/(tabs)/index.tsx" />
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  flexContainer: {
+    flex: 1, // Ensure that the parent View fills the screen
+  },
+  scrollView: {
+    width: '100%', // Ensure that the ScrollView fills the width
+  },
+  contentContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   homeContainer: {
-    // flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   title: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   separator: {
     marginVertical: 30,
     height: 1,
-    width: "80%",
+    width: '80%',
   },
 });
+
+// import { ScrollView, StyleSheet } from "react-native";
+// import EditScreenInfo from "@/components/EditScreenInfo";
+// import { Text, View } from "@/components/Themed";
+// import Header from "@/components/Header";
+// import ScoreTicker from "@/components/ScoreTicker";
+// import SeeMoreButton from "@/components/SeeMoreBtn";
+// import FeatureArticleCarousel from "../../components/FeatureArticleCarousel";
+
+// export default function Home() {
+//   return (
+//     <View>
+//       <Header />
+//       <ScrollView>
+//         <View style={styles.container}>
+//           <SeeMoreButton to="match" />
+//           <ScoreTicker />
+//           <FeatureArticleCarousel />
+//           <View style={styles.homeContainer}>
+//             <Text style={styles.title}>Home</Text>
+//             <View
+//               style={styles.separator}
+//               lightColor="#eee"
+//               darkColor="rgba(255,255,255,0.1)"
+//             />
+//             <EditScreenInfo path="app/(tabs)/index.tsx" />
+//           </View>
+//         </View>
+//       </ScrollView>
+//     </View>
+//   );
+// }
+
+// const styles = StyleSheet.create({
+//   container: {
+//     // flex: 1,
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//   homeContainer: {
+//     // flex: 1,
+//     alignItems: "center",
+//     justifyContent: "center",
+//   },
+//   title: {
+//     fontSize: 20,
+//     fontWeight: "bold",
+//   },
+//   separator: {
+//     marginVertical: 30,
+//     height: 1,
+//     width: "80%",
+//   },
+// });
