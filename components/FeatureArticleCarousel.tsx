@@ -116,7 +116,6 @@ export default function FeatureArticleCarousel() {
 
 const styles = StyleSheet.create({
   container: {
-    // backgroundColor: "blue",
     width: wp("100%"),
     height: hp("40%"),
     display: "flex",
@@ -124,7 +123,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   slide: {
-    // backgroundColor: "blue",
     maxHeight: hp("40%"),
     margin: hp("1%"),
   },
@@ -136,21 +134,15 @@ const styles = StyleSheet.create({
     borderBottomColor: COLORS.secondary,
   },
   titleContainer: {
-    // backgroundColor: "red",
     height: hp("6%"),
     display: "flex",
-    // alignItems: "center",
     justifyContent: "center",
-    // marginTop: hp("1%"),
   },
   title: {
-    // backgroundColor: "pink",
-    // height: hp("6%"),
     color: COLORS.white,
     fontSize: hp("2%"),
     fontWeight: "bold",
     textAlign: "justify",
-    // marginTop: hp("1%"),
   },
   summaryContainer: {
     height: hp("4.5%"),
@@ -158,8 +150,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   summary: {
-    // backgroundColor: "green",
-    // maxHeight: hp("4.5%"),
     height: hp("4.5%"),
     color: COLORS.white,
     fontSize: hp("1.5%"),
@@ -169,12 +159,10 @@ const styles = StyleSheet.create({
     height: hp("3%"),
     paddingVertical: 0,
     marginVertical: 0,
-    // backgroundColor: "pink",
   },
   paginationDotContainer: {
     width: hp("3%"),
     height: hp("3%"),
-    // backgroundColor: "yellow",
   },
   paginationDot: {
     width: hp("1%"),
