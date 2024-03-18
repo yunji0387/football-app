@@ -11,15 +11,9 @@ import { COLORS } from "@/constants/theme";
 export default function Header() {
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Image
-          source={icons.logo}
-          contentFit="contain"
-          style={styles.logoIcon}
-        />
-        <View style={styles.titleContainer}>
-          <Text style={styles.title}>PL Pulse</Text>
-        </View>
+      <Image source={icons.logo} contentFit="contain" style={styles.logoIcon} />
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>PL Pulse</Text>
       </View>
     </View>
   );
@@ -28,17 +22,11 @@ export default function Header() {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    width: "100%",
-    height: hp("10%"),
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-  logoContainer: {
-    display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
     gap: wp("1%"),
+    height: hp("7%"),
   },
   logoIcon: {
     width: hp("7%"),
