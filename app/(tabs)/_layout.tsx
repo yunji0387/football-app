@@ -1,4 +1,4 @@
-import { Tabs } from "expo-router";
+import { Tabs, Slot } from "expo-router";
 import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import icons from "../../constants/icons";
@@ -32,7 +32,6 @@ export default function TabLayout() {
         tabBarStyle: {
           position: "absolute",
           backgroundColor: COLORS.primary,
-          // backgroundColor: "blue",
           borderTopColor: COLORS.grey,
           borderTopWidth: hp("0.25%"),
           height: hp("8%"),

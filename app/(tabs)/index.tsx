@@ -6,11 +6,16 @@ import Header from "@/components/Header";
 import ScoreTicker from "@/components/ScoreTicker";
 import SeeMoreButton from "@/components/SeeMoreBtn";
 import FeatureArticleCarousel from "@/components/FeatureArticleCarousel";
+import NewsList from "@/components/NewsList";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 export default function Home() {
   return (
-    <SafeAreaView style={styles.flexContainer}>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.flexContainer}>
         <ScrollView
           style={styles.scrollView}
@@ -21,7 +26,8 @@ export default function Home() {
           <ScoreTicker />
           <FeatureArticleCarousel />
           <SeeMoreButton to="standings" />
-          <View style={styles.homeContainer}>
+          <NewsList />
+          {/* <View style={styles.homeContainer}>
             <Text style={styles.title}>Home</Text>
             <View
               style={styles.separator}
@@ -29,7 +35,7 @@ export default function Home() {
               darkColor="rgba(255,255,255,0.1)"
             />
             <EditScreenInfo path="app/(tabs)/index.tsx" />
-          </View>
+          </View> */}
         </ScrollView>
       </View>
     </SafeAreaView>
@@ -38,12 +44,13 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   flexContainer: {
-    flex: 1, // Ensure that the parent View fills the screen
+    flex: 1,
   },
   scrollView: {
-    width: "100%", // Ensure that the ScrollView fills the width
+    flex: 1,
   },
   contentContainer: {
+    paddingBottom: hp("9%"),
     alignItems: "center",
     justifyContent: "center",
   },
@@ -51,6 +58,10 @@ const styles = StyleSheet.create({
     height: 500,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "pink",
+    borderWidth: hp("2%"),
+    borderColor: "yellow",
+    marginTop: hp("5%"),
   },
   title: {
     fontSize: 20,
