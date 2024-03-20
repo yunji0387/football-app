@@ -11,6 +11,9 @@ This football app provides Premier League's real-time scores, fixtures, and stan
 - __Player and Team Statistics__: Dive into detailed statistics for players and teams, including goals, assists, defensive records, and more.
 - __Notifications__: Opt-in for push notifications to receive alerts about your favorite teams and important matches.
 
+### Wireframe
+- [Figma Prototype](https://www.figma.com/proto/DQjKrrghk5lFthOAxRRKjQ/football-app?node-id=1-2&starting-point-node-id=1%3A2&mode=design&t=wwDYsnl1DdWEedYQ-1)
+
 ## Getting Started
 
 ### Prerequisites
