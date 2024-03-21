@@ -1,5 +1,4 @@
-import { StyleSheet } from "react-native";
-import { View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import icons from "../constants/icons";
 import {
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: hp("3%"),
     fontWeight: "bold",
-    color: "white",
+    color: COLORS.white,
     textDecorationColor: COLORS.secondary,
   },
 });
