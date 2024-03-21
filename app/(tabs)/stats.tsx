@@ -8,6 +8,7 @@ import {
 } from "react-native-responsive-screen";
 import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
+import TopStats from "@/components/TopStats";
 
 export default function stats() {
   return (
@@ -18,6 +19,7 @@ export default function stats() {
       >
         <TopLogo />
         <HeaderText title="Statistics" />
+        <TopStats />
         <View style={styles.statsContainer}>
           <Text style={styles.title}>Stats</Text>
           <View
