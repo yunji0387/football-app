@@ -2,7 +2,7 @@ import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
-import Header from "@/components/Header";
+import TopLogo from "@/components/TopLogo";
 import ScoreTicker from "@/components/ScoreTicker";
 import SeeMoreButton from "@/components/SeeMoreBtn";
 import FeatureArticleCarousel from "@/components/FeatureArticleCarousel";
@@ -21,7 +21,7 @@ export default function Home() {
           style={styles.scrollView}
           contentContainerStyle={styles.contentContainer}
         >
-          <Header />
+          <TopLogo />
           <SeeMoreButton to="match" />
           <ScoreTicker />
           <FeatureArticleCarousel />

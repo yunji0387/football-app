@@ -8,7 +8,7 @@ import {
 } from "react-native-responsive-screen";
 import { COLORS } from "@/constants/theme";
 
-export default function Header() {
+export default function TopLogo() {
   return (
     <View style={styles.container}>
       <Image source={icons.logo} contentFit="contain" style={styles.logoIcon} />
