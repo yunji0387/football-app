@@ -9,6 +9,7 @@ import {
 import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import TopStats from "@/components/TopStats";
+import LeagueTable from "@/components/LeagueTable";
 
 export default function stats() {
   return (
@@ -20,7 +21,8 @@ export default function stats() {
         <TopLogo />
         <HeaderText title="Statistics" />
         <TopStats />
-        <View style={styles.statsContainer}>
+        <LeagueTable />
+        {/* <View style={styles.statsContainer}>
           <Text style={styles.title}>Stats</Text>
           <View
             style={styles.separator}
@@ -28,7 +30,7 @@ export default function stats() {
             darkColor="rgba(255,255,255,0.1)"
           />
           <EditScreenInfo path="app/(tabs)/index.tsx" />
-        </View>
+        </View> */}
       </ScrollView>
     </SafeAreaView>
   );
