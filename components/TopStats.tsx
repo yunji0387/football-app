@@ -1,79 +1,95 @@
-import React from 'react';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Text } from "react-native";
+import { Image } from "expo-image";
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from "react-native-responsive-screen";
 
 interface StatItem {
   id: string;
   type: string;
   value: number;
   imageUrl: string;
+  name: string;
 }
 
 const mockStatItems: StatItem[] = [
   {
-    id: '1',
-    type: 'Goals',
+    id: "1",
+    type: "Goals",
     value: 23,
-    imageUrl: 'https://via.placeholder.com/150/0000FF/808080?Text=Player1',
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Player1",
+    name: "Kane",
   },
   {
-    id: '2',
-    type: 'Assists',
+    id: "2",
+    type: "Assists",
     value: 23,
-    imageUrl: 'https://via.placeholder.com/150/008000/FFFFFF?Text=Player2',
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Player2",
+    name: "Son",
   },
   {
-    id: '3',
-    type: 'Club Goals',
+    id: "3",
+    type: "Club Goals",
     value: 78,
-    imageUrl: 'https://via.placeholder.com/150/FF0000/FFFFFF?Text=Club1',
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Club1",
+    name: "MU",
   },
   {
-    id: '4',
-    type: 'Clean Sheets',
+    id: "4",
+    type: "Clean Sheets",
     value: 15,
-    imageUrl: 'https://via.placeholder.com/150/FFFF00/000000?Text=Club2',
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Club2",
+    name: "MC",
   },
 ];
 
 export default function TopStats() {
-    return (
-        <View style={styles.container}>
-          {mockStatItems.map((item) => (
-            <View key={item.id} style={styles.statItem}>
-              <Image source={{ uri: item.imageUrl }} style={styles.image} />
-              <Text style={styles.type}>{item.type}</Text>
-              <Text style={styles.value}>{item.value}</Text>
-            </View>
-          ))}
+  return (
+    <View style={styles.container}>
+      {mockStatItems.map((item) => (
+        <View key={item.id} style={styles.statItem}>
+          <Text style={styles.value}>{item.value}</Text>
+          <Text style={styles.type}>{item.type}</Text>
+          <Image source={{ uri: item.imageUrl }} style={styles.image} />
+          <Text style={styles.name}>{item.name}</Text>
         </View>
-      );
-};
+      ))}
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
-    container: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      padding: 10,
-      backgroundColor: '#eaeaea',
-    },
-    statItem: {
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    image: {
-      width: 50,
-      height: 50,
-      borderRadius: 25,
-      marginBottom: 5,
-    },
-    type: {
-      fontSize: 14,
-      fontWeight: 'bold',
-      marginBottom: 2,
-    },
-    value: {
-      fontSize: 18,
-      fontWeight: 'bold',
-    },
-  });
+  container: {
+    width: wp("100%"),
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: hp("1%"),
+    backgroundColor: "#eaeaea",
+  },
+  statItem: {
+    width: wp("20%"),
+    height: wp("38%"),
+    backgroundColor: "pink",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image: {
+    width: wp("20%"),
+    height: wp("20%"),
+  },
+  type: {
+    fontSize: wp("3%"),
+    fontWeight: "bold",
+  },
+  value: {
+    fontSize: wp("5%"),
+    fontWeight: "bold",
+  },
+  name: {
+    fontSize: wp("3.5%"),
+    fontWeight: "bold",
+  },
+});
