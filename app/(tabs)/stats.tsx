@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -12,26 +12,41 @@ import HeaderText from "@/components/HeaderText";
 export default function stats() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <TopLogo />
-      <HeaderText title="Statistics" />
-      <View style={styles.container}>
-        <Text style={styles.title}>Stats</Text>
-        <View
-          style={styles.separator}
-          lightColor="#eee"
-          darkColor="rgba(255,255,255,0.1)"
-        />
-        <EditScreenInfo path="app/(tabs)/index.tsx" />
-      </View>
+      <ScrollView
+        style={styles.scrollView}
+        contentContainerStyle={styles.contentContainer}
+      >
+        <TopLogo />
+        <HeaderText title="Statistics" />
+        <View style={styles.statsContainer}>
+          <Text style={styles.title}>Stats</Text>
+          <View
+            style={styles.separator}
+            lightColor="#eee"
+            darkColor="rgba(255,255,255,0.1)"
+          />
+          <EditScreenInfo path="app/(tabs)/index.tsx" />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  scrollView: {
+    flex: 1,
+  },
+  contentContainer: {
+    paddingBottom: hp("9%"),
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  statsContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    backgroundColor: "pink",
+    height: 500,
   },
   title: {
     fontSize: 20,
