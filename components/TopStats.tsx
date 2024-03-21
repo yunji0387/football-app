@@ -58,11 +58,13 @@ export default function TopStats() {
         <View key={item.id} style={styles.statItem}>
           <Text style={styles.value}>{item.value}</Text>
           <Text style={styles.type}>{item.type}</Text>
-          <View style={[styles.imageContainer, { borderBottomColor: `#${item.color}` }]}>
-            <Image 
-              source={{ uri: item.imageUrl }}
-              style={styles.image}
-            />
+          <View
+            style={[
+              styles.imageContainer,
+              { borderBottomColor: `#${item.color}` },
+            ]}
+          >
+            <Image source={{ uri: item.imageUrl }} style={styles.image} />
           </View>
           <Text style={styles.name}>{item.name}</Text>
         </View>
@@ -78,12 +80,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: hp("1%"),
-    // backgroundColor: "#eaeaea",
   },
   statItem: {
     width: wp("20%"),
     height: wp("38%"),
-    // backgroundColor: "pink",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -91,25 +91,17 @@ const styles = StyleSheet.create({
     width: wp("20%"),
     height: wp("21%"),
     borderBottomWidth: wp("1%"),
-    // The borderBottomColor will be set dynamically
   },
   image: {
     width: wp("20%"),
     height: wp("20%"),
-    // borderBottomWidth: hp("0.5%"),
-    // borderBottomColor: "yellow",
   },
   type: {
-    // width: "100%",
-    // textAlign: "right",
-    // textAlign: "center",
     fontSize: wp("3%"),
     fontWeight: "bold",
     color: COLORS.white,
   },
   value: {
-    // width: "100%",
-    // textAlign: "left",
     fontSize: wp("5%"),
     fontWeight: "bold",
     color: COLORS.white,
