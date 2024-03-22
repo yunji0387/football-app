@@ -35,11 +35,14 @@ const styles = StyleSheet.create({
     height: hp("4%"),
     borderBottomWidth: hp("0.5%"),
     borderBottomColor: "yellow",
+    alignItems: "flex-start",
+    justifyContent: "center",
   },
   title: {
+    textAlign: "center",
     fontSize: hp("3%"),
     fontWeight: "bold",
+    height: hp("4%"),
     color: COLORS.white,
-    textDecorationColor: COLORS.secondary,
   },
 });
