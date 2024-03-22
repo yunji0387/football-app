@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   image: {
     width: wp("30%"),
     height: hp("10%"),
-    borderBottomWidth: hp("0.5%"),
+    borderBottomWidth: hp("0.25%"),
     borderBottomColor: COLORS.secondary,
   },
   textContainer: {

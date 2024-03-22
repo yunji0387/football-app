@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: hp("25%"),
     maxHeight: hp("25%"),
-    borderBottomWidth: hp("0.5%"),
+    borderBottomWidth: hp("0.3%"),
     borderBottomColor: COLORS.secondary,
   },
   titleContainer: {
