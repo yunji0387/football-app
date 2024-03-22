@@ -257,6 +257,9 @@ export default function LeagueTable() {
           <Text style={styles.statsContainer}>{row.points}</Text>
         </TouchableOpacity>
       ))}
+      <View style={styles.tableHeader}>
+        <Text style={styles.fullResultText}>Show Full Result</Text>
+      </View>
     </ScrollView>
   );
 }
@@ -291,5 +294,10 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue",
     textAlign: "center",
   },
-  // Add additional styles as needed
+  fullResultText: {
+    color: COLORS.blue,
+    textDecorationLine: "underline",
+    textAlign: "center",
+    fontWeight: "bold",
+  },
 });
