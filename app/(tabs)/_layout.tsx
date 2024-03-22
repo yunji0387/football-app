@@ -40,7 +40,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen
-        name="standings"
+        name="news"
         options={{
           title: "",
           tabBarIcon: ({ focused }: { focused: boolean }) => {
