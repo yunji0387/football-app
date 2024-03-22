@@ -236,12 +236,12 @@ export default function LeagueTable() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.tableHeader}>
-        <Text style={styles.headerItem}>Team</Text>
-        <Text style={styles.headerItem}>P</Text>
-        <Text style={styles.headerItem}>W</Text>
-        <Text style={styles.headerItem}>D</Text>
-        <Text style={styles.headerItem}>L</Text>
-        <Text style={styles.headerItem}>Pts</Text>
+        <Text style={styles.teamContainer}>Team</Text>
+        <Text style={styles.statsContainer}>P</Text>
+        <Text style={styles.statsContainer}>W</Text>
+        <Text style={styles.statsContainer}>D</Text>
+        <Text style={styles.statsContainer}>L</Text>
+        <Text style={styles.statsContainer}>Pts</Text>
       </View>
       {mockTableData.map((row) => (
         <TouchableOpacity
@@ -249,12 +249,12 @@ export default function LeagueTable() {
           style={styles.row}
           onPress={() => onRowPress(row.id)}
         >
-          <Text style={styles.rowItem}>{row.team}</Text>
-          <Text style={styles.rowItem}>{row.played}</Text>
-          <Text style={styles.rowItem}>{row.win}</Text>
-          <Text style={styles.rowItem}>{row.draw}</Text>
-          <Text style={styles.rowItem}>{row.loss}</Text>
-          <Text style={styles.rowItem}>{row.points}</Text>
+          <Text style={styles.teamContainer}>{row.team}</Text>
+          <Text style={styles.statsContainer}>{row.played}</Text>
+          <Text style={styles.statsContainer}>{row.win}</Text>
+          <Text style={styles.statsContainer}>{row.draw}</Text>
+          <Text style={styles.statsContainer}>{row.loss}</Text>
+          <Text style={styles.statsContainer}>{row.points}</Text>
         </TouchableOpacity>
       ))}
     </ScrollView>
@@ -268,23 +268,28 @@ const styles = StyleSheet.create({
   tableHeader: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    padding: 10,
-    backgroundColor: "#ddd", // Color for the header
-  },
-  headerItem: {
-    fontWeight: "bold",
-    // Additional header styles here
+    paddingVertical: hp("1%"),
+    backgroundColor: "#202020",
   },
   row: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ccc", // Color for the row separator
+    paddingVertical: hp("1%"),
+    borderBottomWidth: hp("0.1%"),
+    borderBottomColor: "#ccc",
   },
-  rowItem: {
-    color: COLORS.white
-    // Styles for each cell in the row
+  teamContainer: {
+    alignItems: "center",
+    width: wp("30%"),
+    textAlign: "center",
+    color: COLORS.white,
+    // backgroundColor: "green",
+  },
+  statsContainer: {
+    width: wp("7.5%"),
+    color: COLORS.white,
+    // backgroundColor: "blue",
+    textAlign: "center",
   },
   // Add additional styles as needed
 });
