@@ -89,8 +89,8 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: wp("20%"),
-    height: wp("21%"),
-    borderBottomWidth: wp("1%"),
+    height: wp("20.5%"),
+    borderBottomWidth: wp("0.5%"),
   },
   image: {
     width: wp("20%"),
