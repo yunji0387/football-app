@@ -17,6 +17,7 @@ interface LeagueTableRow {
   id: string;
   position: number;
   team: string;
+  imageUrl: string;
   played: number;
   win: number;
   draw: number;
@@ -29,6 +30,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "1",
     position: 1,
     team: "Liverpool",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team1",
     played: 28,
     win: 22,
     draw: 4,
@@ -38,7 +40,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "2",
     position: 2,
-    team: "Manchester City",
+    team: "Man City",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team2",
     played: 28,
     win: 21,
     draw: 3,
@@ -49,6 +52,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "3",
     position: 3,
     team: "Chelsea",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team3",
     played: 28,
     win: 19,
     draw: 5,
@@ -59,6 +63,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "4",
     position: 4,
     team: "Arsenal",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team4",
     played: 28,
     win: 18,
     draw: 4,
@@ -68,7 +73,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "5",
     position: 5,
-    team: "Tottenham Hotspur",
+    team: "Tottenham",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team5",
     played: 28,
     win: 16,
     draw: 6,
@@ -78,7 +84,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "6",
     position: 6,
-    team: "Manchester United",
+    team: "Man United",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team6",
     played: 28,
     win: 14,
     draw: 8,
@@ -89,6 +96,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "7",
     position: 7,
     team: "Everton",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team7",
     played: 28,
     win: 12,
     draw: 9,
@@ -98,7 +106,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "8",
     position: 8,
-    team: "Leicester City",
+    team: "Leicester",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team8",
     played: 28,
     win: 11,
     draw: 9,
@@ -108,7 +117,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "9",
     position: 9,
-    team: "West Ham United",
+    team: "West Ham",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team9",
     played: 28,
     win: 10,
     draw: 8,
@@ -118,7 +128,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "10",
     position: 10,
-    team: "Wolverhampton Wanderers",
+    team: "Wolves",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team10",
     played: 28,
     win: 9,
     draw: 10,
@@ -129,6 +140,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "11",
     position: 11,
     team: "Southampton",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team11",
     played: 28,
     win: 9,
     draw: 7,
@@ -138,7 +150,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "12",
     position: 12,
-    team: "Newcastle United",
+    team: "Newcastle",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team12",
     played: 28,
     win: 8,
     draw: 9,
@@ -149,6 +162,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "13",
     position: 13,
     team: "Crystal Palace",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team13",
     played: 28,
     win: 8,
     draw: 8,
@@ -159,6 +173,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "14",
     position: 14,
     team: "Aston Villa",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team14",
     played: 28,
     win: 9,
     draw: 4,
@@ -168,7 +183,8 @@ const mockTableData: LeagueTableRow[] = [
   {
     id: "15",
     position: 15,
-    team: "Brighton & Hove Albion",
+    team: "Brighton",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team15",
     played: 28,
     win: 7,
     draw: 10,
@@ -179,6 +195,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "16",
     position: 16,
     team: "Burnley",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team16",
     played: 28,
     win: 8,
     draw: 6,
@@ -189,6 +206,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "17",
     position: 17,
     team: "Brentford",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team17",
     played: 28,
     win: 7,
     draw: 7,
@@ -199,6 +217,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "18",
     position: 18,
     team: "Leeds United",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team18",
     played: 28,
     win: 6,
     draw: 9,
@@ -209,6 +228,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "19",
     position: 19,
     team: "Watford",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team19",
     played: 28,
     win: 5,
     draw: 8,
@@ -219,6 +239,7 @@ const mockTableData: LeagueTableRow[] = [
     id: "20",
     position: 20,
     team: "Norwich City",
+    imageUrl: "https://via.placeholder.com/150/A8A8A8/303030?Text=Team20",
     played: 28,
     win: 3,
     draw: 5,
@@ -249,7 +270,10 @@ export default function LeagueTable() {
           style={styles.row}
           onPress={() => onRowPress(row.id)}
         >
-          <Text style={styles.teamContainer}>{row.team}</Text>
+          <View style={styles.teamContainer}>
+            <Image source={{ uri: row.imageUrl }} style={styles.teamImage}/>
+            <Text style={styles.teamName}>{row.team}</Text>
+          </View>
           <Text style={styles.statsContainer}>{row.played}</Text>
           <Text style={styles.statsContainer}>{row.win}</Text>
           <Text style={styles.statsContainer}>{row.draw}</Text>
@@ -271,28 +295,45 @@ const styles = StyleSheet.create({
   tableHeader: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-    paddingVertical: hp("1%"),
+    paddingVertical: hp("0.75%"),
     backgroundColor: "#202020",
   },
   row: {
     flexDirection: "row",
+    alignItems: "center",
     justifyContent: "space-evenly",
-    paddingVertical: hp("1%"),
+    paddingVertical: hp("0.5%"),
     borderBottomWidth: hp("0.1%"),
     borderBottomColor: "#ccc",
   },
   teamContainer: {
+    flexDirection: "row",
     alignItems: "center",
-    width: wp("30%"),
+    justifyContent: "center",
+    width: wp("32%"),
     textAlign: "center",
     color: COLORS.white,
-    // backgroundColor: "green",
+    fontSize: wp("3.5%"),
+    backgroundColor: "green",
+  },
+  teamImage: {
+    width: wp("6%"),
+    height: wp("6%"),
+  },
+  teamName: {
+    width: wp("25%"),
+    textAlign: "center",
+    fontSize: wp("3.5%"),
+    color: COLORS.white,
+    fontWeight: "bold",
+    backgroundColor: "red",
   },
   statsContainer: {
     width: wp("7.5%"),
     color: COLORS.white,
     // backgroundColor: "blue",
     textAlign: "center",
+    fontSize: wp("3.5%"),
   },
   fullResultText: {
     color: COLORS.blue,
