@@ -257,12 +257,13 @@ export default function LeagueTable() {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.tableHeader}>
-        <Text style={styles.teamContainer}>Team</Text>
-        <Text style={styles.statsContainer}>P</Text>
-        <Text style={styles.statsContainer}>W</Text>
-        <Text style={styles.statsContainer}>D</Text>
-        <Text style={styles.statsContainer}>L</Text>
-        <Text style={styles.statsContainer}>Pts</Text>
+        <View style={styles.statsContainer}></View>
+        <Text style={[styles.teamContainer, {fontWeight: "bold"}]}>Team</Text>
+        <Text style={[styles.statsContainer, {fontWeight: "bold"}]}>P</Text>
+        <Text style={[styles.statsContainer, {fontWeight: "bold"}]}>W</Text>
+        <Text style={[styles.statsContainer, {fontWeight: "bold"}]}>D</Text>
+        <Text style={[styles.statsContainer, {fontWeight: "bold"}]}>L</Text>
+        <Text style={[styles.statsContainer, {fontWeight: "bold"}]}>Pts</Text>
       </View>
       {mockTableData.map((row) => (
         <TouchableOpacity
@@ -270,6 +271,7 @@ export default function LeagueTable() {
           style={styles.row}
           onPress={() => onRowPress(row.id)}
         >
+          <Text style={styles.statsContainer}>{row.position}</Text>
           <View style={styles.teamContainer}>
             <Image source={{ uri: row.imageUrl }} style={styles.teamImage}/>
             <Text style={styles.teamName}>{row.team}</Text>
@@ -291,6 +293,7 @@ export default function LeagueTable() {
 const styles = StyleSheet.create({
   container: {
     width: wp("100%"),
+    paddingHorizontal: wp("2%"),
   },
   tableHeader: {
     flexDirection: "row",
@@ -309,12 +312,12 @@ const styles = StyleSheet.create({
   teamContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     width: wp("32%"),
     textAlign: "center",
     color: COLORS.white,
     fontSize: wp("3.5%"),
-    backgroundColor: "green",
+    // backgroundColor: "green",
   },
   teamImage: {
     width: wp("6%"),
@@ -326,7 +329,7 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
   statsContainer: {
     width: wp("7.5%"),
