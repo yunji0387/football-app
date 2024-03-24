@@ -11,6 +11,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import StyledBtn from "@/components/StyledBtn";
 
 export default function news() {
     return (
@@ -24,6 +25,7 @@ export default function news() {
               <HeaderText title="News " />
               {/* <FeatureArticleCarousel /> */}
               {/* <SeeMoreButton to="standings" /> */}
+              <StyledBtn to="standings" title="Standings" />
               <NewsList />
               {/* <View style={styles.homeContainer}>
                 <Text style={styles.title}>Home</Text>
