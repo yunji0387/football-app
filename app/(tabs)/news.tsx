@@ -5,6 +5,7 @@ import TopLogo from "@/components/TopLogo";
 import SeeMoreButton from "@/components/SeeMoreBtn";
 import FeatureArticleCarousel from "@/components/FeatureArticleCarousel";
 import NewsList from "@/components/NewsList";
+import HeaderText from "@/components/HeaderText";
 import { SafeAreaView } from 'react-native-safe-area-context';
 import {
   widthPercentageToDP as wp,
@@ -20,8 +21,9 @@ export default function news() {
               contentContainerStyle={styles.contentContainer}
             >
               <TopLogo />
-              <FeatureArticleCarousel />
-              <SeeMoreButton to="standings" />
+              <HeaderText title="News " />
+              {/* <FeatureArticleCarousel /> */}
+              {/* <SeeMoreButton to="standings" /> */}
               <NewsList />
               {/* <View style={styles.homeContainer}>
                 <Text style={styles.title}>Home</Text>
@@ -37,7 +39,7 @@ export default function news() {
         </SafeAreaView>
       );
     }
-    
+
     const styles = StyleSheet.create({
       flexContainer: {
         flex: 1,
