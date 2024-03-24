@@ -15,9 +15,17 @@ type StyledBtnProps = {
 export default function StyledBtn({ to, title }: StyledBtnProps) {
   return (
     <View style={styles.container}>
-      <View style={styles.btnContainer}>
-        <Text style={styles.text}>StyledBtn</Text>
-      </View>
+      <Link
+        href={
+          {
+            pathname: "/[page]",
+            params: { page: to },
+          } as any
+        }
+        style={styles.btnContainer}
+      >
+        <Text style={styles.text}>{title}</Text>
+      </Link>
     </View>
   );
 }

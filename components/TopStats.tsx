@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: hp("1%"),
+    padding: wp("2%"),
   },
   statItem: {
     width: wp("20%"),

@@ -25,7 +25,7 @@ export default function news() {
               <HeaderText title="News " />
               {/* <FeatureArticleCarousel /> */}
               {/* <SeeMoreButton to="standings" /> */}
-              <StyledBtn to="standings" title="Standings" />
+              <StyledBtn to="" title="Standings" />
               <NewsList />
               {/* <View style={styles.homeContainer}>
                 <Text style={styles.title}>Home</Text>
