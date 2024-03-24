@@ -52,24 +52,24 @@ export default function news() {
         alignItems: "center",
         justifyContent: "center",
       },
-      homeContainer: {
-        height: 500,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "pink",
-        borderWidth: hp("2%"),
-        borderColor: "yellow",
-        marginTop: hp("5%"),
-      },
-      title: {
-        fontSize: 20,
-        fontWeight: "bold",
-      },
-      separator: {
-        marginVertical: 30,
-        height: 1,
-        width: "80%",
-      },
+      // homeContainer: {
+      //   height: 500,
+      //   alignItems: "center",
+      //   justifyContent: "center",
+      //   backgroundColor: "pink",
+      //   borderWidth: hp("2%"),
+      //   borderColor: "yellow",
+      //   marginTop: hp("5%"),
+      // },
+      // title: {
+      //   fontSize: 20,
+      //   fontWeight: "bold",
+      // },
+      // separator: {
+      //   marginVertical: 30,
+      //   height: 1,
+      //   width: "80%",
+      // },
     });
 
 // import React, { useEffect, useState } from "react";

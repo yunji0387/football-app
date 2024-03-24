@@ -243,8 +243,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "#FFF",
-    marginVertical: hp("1%"),
+    backgroundColor: COLORS.darkGrey,
+    marginVertical: hp("0.75%"),
     height: hp("8.5%"),
     padding: hp("1%"),
   },
@@ -268,6 +268,7 @@ const styles = StyleSheet.create({
   },
   teamName: {
     fontSize: hp("1.5%"),
+    color: COLORS.white,
   },
   scoreContainer: {
     width: "50%",
@@ -279,11 +280,14 @@ const styles = StyleSheet.create({
   score: {
     fontSize: hp("2.5%"),
     fontWeight: "bold",
+    color: COLORS.white,
   },
   date: {
     fontSize: hp("1.5%"),
+    color: COLORS.white,
   },
   matchNumber: {
     fontSize: hp("1.5%"),
+    color: COLORS.white,
   },
 });

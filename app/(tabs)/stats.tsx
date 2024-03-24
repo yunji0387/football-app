@@ -45,20 +45,20 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  statsContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "green",
-    height: 500,
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
-  },
+  // statsContainer: {
+  //   flex: 1,
+  //   alignItems: "center",
+  //   justifyContent: "center",
+  //   backgroundColor: "green",
+  //   height: 500,
+  // },
+  // title: {
+  //   fontSize: 20,
+  //   fontWeight: "bold",
+  // },
+  // separator: {
+  //   marginVertical: 30,
+  //   height: 1,
+  //   width: "80%",
+  // },
 });
