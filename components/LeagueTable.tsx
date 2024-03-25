@@ -255,7 +255,7 @@ export default function LeagueTable() {
   };
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
       <View style={styles.tableHeader}>
         <View style={styles.statsContainer}></View>
         <Text style={[styles.teamContainer, {fontWeight: "bold"}]}>Team</Text>
@@ -295,17 +295,25 @@ const styles = StyleSheet.create({
     width: wp("100%"),
     paddingHorizontal: wp("2%"),
   },
+  contentContainer: {
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
   tableHeader: {
+    width: "100%",
     flexDirection: "row",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     paddingVertical: hp("0.75%"),
+    paddingHorizontal: wp("2%"),
     backgroundColor: COLORS.darkGrey,
   },
   row: {
+    width: "100%",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     paddingVertical: hp("0.5%"),
+    paddingHorizontal: wp("2%"),
     borderBottomWidth: hp("0.1%"),
     borderBottomColor: "#ccc",
   },
@@ -336,6 +344,7 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
   },
   fullResultText: {
+    width: "100%",
     color: COLORS.blue,
     textDecorationLine: "underline",
     textAlign: "center",
