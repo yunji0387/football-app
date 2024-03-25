@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     paddingVertical: hp("0.75%"),
-    backgroundColor: "#202020",
+    backgroundColor: COLORS.darkGrey,
   },
   row: {
     flexDirection: "row",
