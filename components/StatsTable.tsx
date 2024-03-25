@@ -200,12 +200,11 @@ const styles = StyleSheet.create({
   container: {
     width: wp("100%"),
     paddingHorizontal: wp("2%"),
-    marginVertical: hp("2%"),
   },
   contentContainer: {
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "yellow",
+    // backgroundColor: "yellow",
   },
   tableHeader: {
     width: "100%",
@@ -232,7 +231,7 @@ const styles = StyleSheet.create({
     // width: wp("32.5%"),
     textAlign: "center",
     color: COLORS.white,
-    backgroundColor: "green",
+    // backgroundColor: "green",
     fontSize: wp("3.5%"),
   },
   playerContainer: {
@@ -242,7 +241,7 @@ const styles = StyleSheet.create({
     width: wp("50%"),
     textAlign: "center",
     color: COLORS.white,
-    backgroundColor: "pink",
+    // backgroundColor: "pink",
     fontSize: wp("3.5%"),
   },
   teamImage: {
@@ -255,7 +254,7 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
   teamName: {
     // width: wp("25%"),
@@ -263,14 +262,14 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    backgroundColor: "grey",
+    // backgroundColor: "grey",
   },
   statsContainer: {
     width: wp("12.5%"),
     color: COLORS.white,
     textAlign: "center",
     fontSize: wp("3.5%"),
-    backgroundColor: "blue",
+    // backgroundColor: "blue",
   },
   fullResultText: {
     width: "100%",
