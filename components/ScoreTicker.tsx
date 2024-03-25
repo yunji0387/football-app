@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   score: {
-    fontSize: hp("2%"),
+    fontSize: hp("2.5%"),
     fontWeight: "bold",
     color: COLORS.white,
   },
