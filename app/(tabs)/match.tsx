@@ -9,6 +9,7 @@ import {
 import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import MatchList from "@/components/MatchList";
+import StyledBtn from "@/components/StyledBtn";
 
 export default function match() {
   return (
@@ -19,6 +20,9 @@ export default function match() {
       >
         <TopLogo />
         <HeaderText title="Matches " />
+        <StyledBtn to="" title="Post Matches" />
+        <StyledBtn to="" title="Upcoming Matches" />
+        <StyledBtn to="" title="View custom Range Matches" />
         <MatchList />
         {/* <View style={styles.container}>
           <Text style={styles.title}>Match</Text>
