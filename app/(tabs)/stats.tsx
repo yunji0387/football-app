@@ -10,6 +10,7 @@ import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import TopStats from "@/components/TopStats";
 import LeagueTable from "@/components/LeagueTable";
+import StyledBtn from "@/components/StyledBtn";
 
 export default function stats() {
   return (
@@ -21,6 +22,9 @@ export default function stats() {
         <TopLogo />
         <HeaderText title="Statistics" />
         <TopStats />
+        <StyledBtn to="" title="Full Standings" />
+        <StyledBtn to="" title="Player Stats" />
+        <StyledBtn to="" title="Team Stats" />
         <LeagueTable />
         {/* <View style={styles.statsContainer}>
           <Text style={styles.title}>Stats</Text>
