@@ -23,6 +23,7 @@ type MatchScore = {
   awayScore: number;
   time: string;
   date: string;
+  matchNumber: number;
 };
 
 const sampleScores: MatchScore[] = [
@@ -36,6 +37,7 @@ const sampleScores: MatchScore[] = [
     awayScore: 2,
     time: "6:00pm",
     date: "Sep 20",
+    matchNumber: 26,
   },
   {
     id: "2",
@@ -47,6 +49,7 @@ const sampleScores: MatchScore[] = [
     awayScore: 4,
     time: "7:15pm",
     date: "Sep 20",
+    matchNumber: 26,
   },
   {
     id: "3",
@@ -58,6 +61,7 @@ const sampleScores: MatchScore[] = [
     awayScore: 0,
     time: "5:00pm",
     date: "Sep 22",
+    matchNumber: 27,
   },
   {
     id: "4",
@@ -69,6 +73,7 @@ const sampleScores: MatchScore[] = [
     awayScore: 1,
     time: "3:20pm",
     date: "Sep 23",
+    matchNumber: 27,
   },
   {
     id: "5 ",
@@ -80,6 +85,7 @@ const sampleScores: MatchScore[] = [
     awayScore: 0,
     time: "7:10pm",
     date: "Sep 23",
+    matchNumber: 28,
   },
 ];
 
@@ -116,6 +122,9 @@ const ScoreTicker = () => {
           style={styles.matchContainer}
           onPress={() => navigateToMatchDetail(match.id)}
         >
+          <Text style={styles.dateTime}>
+            EPL R{match.matchNumber}
+          </Text>
           <View style={{ display: "flex", flexDirection: "row" }}>
             <View style={styles.teamIconContainer}>
               <Image
@@ -148,7 +157,8 @@ const ScoreTicker = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    height: hp("10%"),
+    height: hp("12.5%"),
+    // backgroundColor: "blue",
   },
   matchContainer: {
     backgroundColor: COLORS.primary,
@@ -157,7 +167,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: hp("9%"),
+    height: hp("10.5%"),
     borderLeftWidth: hp("0.1%"),
     borderTopWidth: hp("0.1%"),
     borderRightWidth: hp("0.25%"),
@@ -166,10 +176,12 @@ const styles = StyleSheet.create({
     borderRightColor: COLORS.secondary,
     borderTopColor: COLORS.white,
     borderLeftColor: COLORS.white,
+    // backgroundColor: "green",
   },
   infoContainer: {
     justifyContent: "center",
     alignItems: "center",
+    paddingHorizontal: wp("2%"),
   },
   team: {
     fontSize: hp("2%"),
@@ -185,9 +197,10 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   teamIconContainer: {
-    paddingHorizontal: wp("1%"),
+    // paddingHorizontal: wp("1%"),
     justifyContent: "center",
     alignItems: "center",
+    // backgroundColor: "pink",
   },
   teamIcon: {
     width: hp("5%"),
