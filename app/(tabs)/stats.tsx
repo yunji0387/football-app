@@ -8,6 +8,7 @@ import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import TopStats from "@/components/TopStats";
 import LeagueTable from "@/components/LeagueTable";
+import StatsTable from "@/components/StatsTable";
 import StyledBtn from "@/components/StyledBtn";
 
 export default function stats() {
@@ -24,6 +25,7 @@ export default function stats() {
         <StyledBtn to="" title="Player Stats" />
         <StyledBtn to="" title="Team Stats" />
         <LeagueTable />
+        <StatsTable isPlayerStats={true} title="Player Stats" />
       </ScrollView>
     </SafeAreaView>
   );
