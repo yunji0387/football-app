@@ -11,13 +11,14 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
-import icons from "../constants/icons";
 import { COLORS } from "@/constants/theme";
 
 type MatchScore = {
   id: string;
   homeTeam: string;
   awayTeam: string;
+  homeLogoUri: string;
+  awayLogoUri: string;
   homeScore: number;
   awayScore: number;
   time: string;
@@ -29,6 +30,8 @@ const sampleScores: MatchScore[] = [
     id: "1",
     homeTeam: "CHE",
     awayTeam: "LIV",
+    homeLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
+    awayLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
     homeScore: 2,
     awayScore: 2,
     time: "6:00pm",
@@ -38,6 +41,8 @@ const sampleScores: MatchScore[] = [
     id: "2",
     homeTeam: "ARS",
     awayTeam: "TOT",
+    homeLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
+    awayLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
     homeScore: 2,
     awayScore: 4,
     time: "7:15pm",
@@ -47,6 +52,8 @@ const sampleScores: MatchScore[] = [
     id: "3",
     homeTeam: "MU",
     awayTeam: "MCI",
+    homeLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
+    awayLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
     homeScore: 2,
     awayScore: 0,
     time: "5:00pm",
@@ -56,6 +63,8 @@ const sampleScores: MatchScore[] = [
     id: "4",
     homeTeam: "BRE",
     awayTeam: "NEW",
+    homeLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
+    awayLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
     homeScore: 2,
     awayScore: 1,
     time: "3:20pm",
@@ -65,6 +74,8 @@ const sampleScores: MatchScore[] = [
     id: "5 ",
     homeTeam: "NOT",
     awayTeam: "SHE",
+    homeLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
+    awayLogoUri: "https://via.placeholder.com/50x50.png?text=HT",
     homeScore: 0,
     awayScore: 0,
     time: "7:10pm",
@@ -106,10 +117,9 @@ const ScoreTicker = () => {
           onPress={() => navigateToMatchDetail(match.id)}
         >
           <View style={{ display: "flex", flexDirection: "row" }}>
-            {/* <Text style={styles.team}>{match.homeTeam}</Text> */}
             <View style={styles.teamIconContainer}>
               <Image
-                source={icons.logo}
+                source={{ uri: match.homeLogoUri }}
                 contentFit="contain"
                 style={styles.teamIcon}
               />
@@ -119,10 +129,9 @@ const ScoreTicker = () => {
                 style={styles.score}
               >{`${match.homeScore} - ${match.awayScore}`}</Text>
             </View>
-            {/* <Text style={styles.team}>{match.awayTeam}</Text> */}
             <View style={styles.teamIconContainer}>
               <Image
-                source={icons.logo}
+                source={{ uri: match.awayLogoUri }}
                 contentFit="contain"
                 style={styles.teamIcon}
               />
@@ -148,7 +157,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    height: hp("8%"),
+    height: hp("9%"),
     borderLeftWidth: hp("0.1%"),
     borderTopWidth: hp("0.1%"),
     borderRightWidth: hp("0.25%"),

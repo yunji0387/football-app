@@ -253,14 +253,12 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "flex-start",
     justifyContent: "center",
-    // backgroundColor: "pink",
   },
   teamContainerRight: {
     width: "25%",
     height: "100%",
     alignItems: "flex-end",
     justifyContent: "center",
-    // backgroundColor: "pink",
   },
   logo: {
     width: hp("5%"),
@@ -269,14 +267,12 @@ const styles = StyleSheet.create({
   teamName: {
     fontSize: hp("1.5%"),
     color: COLORS.white,
-    // backgroundColor: "green",
   },
   scoreContainer: {
     width: "50%",
     height: "100%",
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "green",
   },
   score: {
     fontSize: hp("2.5%"),
