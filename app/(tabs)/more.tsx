@@ -21,7 +21,7 @@ export default function more() {
         <HeaderText title="More" />
         <StyledBtn to="" title="Login / Sign Up" />
         <HeaderText title="Settings" />
-        <StyledBtn to="" title="Notifications" />
+        <StyledBtn to="" title="Notifications" styleNum={2} />
         <StyledBtn to="" title="Clear Cache" />
         <StyledBtn to="" title="Theme" />
         <HeaderText title="Other" />
