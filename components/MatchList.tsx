@@ -244,9 +244,9 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     backgroundColor: COLORS.darkGrey,
-    marginVertical: hp("0.75%"),
-    height: hp("8.5%"),
-    padding: hp("1%"),
+    marginVertical: hp("1%"),
+    height: hp("9.5%"),
+    padding: hp("1.5%"),
   },
   teamContainerLeft: {
     width: "25%",
@@ -269,6 +269,7 @@ const styles = StyleSheet.create({
   teamName: {
     fontSize: hp("1.5%"),
     color: COLORS.white,
+    // backgroundColor: "green",
   },
   scoreContainer: {
     width: "50%",
