@@ -21,7 +21,7 @@ export default function StyledBtn({ to, title }: StyledBtnProps) {
           params: { page: to },
         } as any
       }
-      style={{marginVertical: hp("1%")}}
+      style={{ marginVertical: hp("1%") }}
     >
       <View style={styles.container}>
         <View style={styles.subContainer}>
@@ -137,7 +137,7 @@ export default function StyledBtn({ to, title }: StyledBtnProps) {
 const styles = StyleSheet.create({
   container: {
     width: wp("96%"),
-    height: hp("4%"),
+    height: hp("5%"),
     alignItems: "center",
     justifyContent: "center",
     // paddingHorizontal: wp("2%"),
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     paddingVertical: hp("0.25%"),
-    paddingHorizontal: wp("1.25%"),
+    paddingHorizontal: wp("2.25%"),
     alignItems: "center",
     justifyContent: "space-between",
     flexDirection: "row",
@@ -168,13 +168,16 @@ const styles = StyleSheet.create({
   titleContainer: {
     width: "90%",
     height: "100%",
-    alignItems: "center",
+    // alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
-    // backgroundColor: "pink",
+    // backgroundColor: "green",
   },
   titleText: {
-    width: "100%",
-    height: "100%",
+    // width: "100%",
+    // height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
     color: COLORS.white,
     fontSize: hp("2%"),
     fontWeight: "bold",
