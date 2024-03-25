@@ -25,7 +25,7 @@ export default function Home() {
           <SeeMoreButton to="match" />
           <ScoreTicker />
           <FeatureArticleCarousel />
-          <SeeMoreButton to="standings" />
+          <SeeMoreButton to="news" />
           <NewsList />
           {/* <View style={styles.homeContainer}>
             <Text style={styles.title}>Home</Text>

@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import { useRouter } from "expo-router";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -16,19 +16,26 @@ export default function SeeMoreButton({
   to,
   title = "See More",
 }: SeeMoreButtonProps) {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push({
+      pathname: "/[page]",
+      params: { page: to },
+    } as any);
+  };
+
   return (
     <View style={styles.container}>
-      <Link
-        href={
-          {
-            pathname: "/[page]",
-            params: { page: to },
-          } as any
-        }
-        style={styles.button}
+      <Pressable
+        style={({ pressed }) => [
+          styles.button,
+          pressed && { opacity: 0.5 }
+        ]}
+        onPress={handlePress}
       >
         <Text style={styles.text}>{title}</Text>
-      </Link>
+      </Pressable>
     </View>
   );
 }
