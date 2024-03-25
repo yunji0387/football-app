@@ -1,6 +1,5 @@
-import { View, Text, StyleSheet, TouchableOpacity, Pressable } from "react-native";
-import React, { useState } from "react";
-import { Link } from "expo-router";
+import { View, Text, StyleSheet, Pressable } from "react-native";
+import React from "react";
 import { useRouter } from 'expo-router';
 import {
   widthPercentageToDP as wp,
@@ -57,52 +56,6 @@ export default function StyledBtn({ to, title, styleNum = 1 }: StyledBtnProps) {
     </Pressable>
   );
 }
-
-// export default function StyledBtn({ to, title, styleNum = 1 }: StyledBtnProps) {
-//   const [isPressed, setIsPressed] = useState(false);
-
-//   let styleContainer;
-//   switch (styleNum) {
-//     case 1:
-//       styleContainer = styles.styleContainer1;
-//       break;
-//     case 2:
-//       styleContainer = styles.styleContainer2;
-//       break;
-//     default:
-//       styleContainer = styles.styleContainer1;
-//   }
-
-//   return (
-//     <TouchableOpacity
-//     onPressIn={() => {}}
-//     onPressOut={() => {}}
-//     activeOpacity={0.7}
-//     style={styles.touchableStyle}
-//     >
-//       <Link
-//         href={
-//           {
-//             pathname: "/[page]",
-//             params: { page: to },
-//           } as any
-//         }
-//         style={{ marginVertical: hp("1%") }}
-//       >
-//         <View style={styles.container}>
-//           <View style={[styles.subContainer, styleContainer]}>
-//             <View style={styles.titleContainer}>
-//               <Text style={styles.titleText}>{title}</Text>
-//             </View>
-//             <View style={styles.navigationIcon}>
-//               <Text style={styles.navigationText}>{">"}</Text>
-//             </View>
-//           </View>
-//         </View>
-//       </Link>
-//     </TouchableOpacity>
-//   );
-// }
 
 const styles = StyleSheet.create({
   touchableStyle: {
