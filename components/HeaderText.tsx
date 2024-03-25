@@ -24,11 +24,9 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    // justifyContent: "center",
     paddingLeft: wp("2%"),
     width: wp("100%"),
     height: hp("5%"),
-    // backgroundColor: "pink",
   },
   title: {
     fontSize: hp("3%"),

@@ -107,9 +107,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginVertical: hp("1%"),
-    // padding: wp("2%"),
     gap: wp("2%"),
-    // backgroundColor: COLORS.darkGrey,
     flex: 1,
     flexDirection: "row",
   },
@@ -120,10 +118,8 @@ const styles = StyleSheet.create({
     borderBottomColor: COLORS.secondary,
   },
   textContainer: {
-    // backgroundColor: "blue",
     flex: 1,
     flexDirection: "column",
-    // marginLeft: wp("2%"),
   },
   category: {
     fontSize: hp("2.5%"),

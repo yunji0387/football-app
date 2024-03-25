@@ -317,7 +317,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: COLORS.white,
     fontSize: wp("3.5%"),
-    // backgroundColor: "green",
   },
   teamImage: {
     width: wp("6%"),
@@ -329,12 +328,10 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    // backgroundColor: "red",
   },
   statsContainer: {
     width: wp("7.5%"),
     color: COLORS.white,
-    // backgroundColor: "blue",
     textAlign: "center",
     fontSize: wp("3.5%"),
   },
