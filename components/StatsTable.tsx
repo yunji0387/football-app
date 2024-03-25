@@ -12,6 +12,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { COLORS } from "@/constants/theme";
+import HeaderText from "@/components/HeaderText";
 
 type HeaderTextProps = {
   isPlayerStats: boolean;
@@ -142,6 +143,7 @@ export default function StatsTable({ isPlayerStats, title }: HeaderTextProps) {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <HeaderText title={title} />
       <View style={styles.tableHeader}>
         <View style={[styles.statsContainer, { width: wp("7.5%") }]}></View>
         {isPlayerStats && (
@@ -204,7 +206,6 @@ const styles = StyleSheet.create({
   contentContainer: {
     alignItems: "center",
     justifyContent: "space-between",
-    // backgroundColor: "yellow",
   },
   tableHeader: {
     width: "100%",
@@ -228,10 +229,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    // width: wp("32.5%"),
     textAlign: "center",
     color: COLORS.white,
-    // backgroundColor: "green",
     fontSize: wp("3.5%"),
   },
   playerContainer: {
@@ -241,7 +240,6 @@ const styles = StyleSheet.create({
     width: wp("50%"),
     textAlign: "center",
     color: COLORS.white,
-    // backgroundColor: "pink",
     fontSize: wp("3.5%"),
   },
   teamImage: {
@@ -254,22 +252,18 @@ const styles = StyleSheet.create({
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    // backgroundColor: "red",
   },
   teamName: {
-    // width: wp("25%"),
     textAlign: "left",
     fontSize: wp("3.5%"),
     color: COLORS.white,
     fontWeight: "bold",
-    // backgroundColor: "grey",
   },
   statsContainer: {
     width: wp("12.5%"),
     color: COLORS.white,
     textAlign: "center",
     fontSize: wp("3.5%"),
-    // backgroundColor: "blue",
   },
   fullResultText: {
     width: "100%",

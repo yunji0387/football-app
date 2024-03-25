@@ -123,7 +123,7 @@ const ScoreTicker = () => {
           onPress={() => navigateToMatchDetail(match.id)}
         >
           <Text style={styles.dateTime}>
-            EPL R{match.matchNumber}
+            {match.date}, {match.time}
           </Text>
           <View style={{ display: "flex", flexDirection: "row" }}>
             <View style={styles.teamIconContainer}>
@@ -146,9 +146,7 @@ const ScoreTicker = () => {
               />
             </View>
           </View>
-          <Text style={styles.dateTime}>
-            {match.date}, {match.time}
-          </Text>
+          <Text style={styles.dateTime}>EPL R{match.matchNumber}</Text>
         </TouchableOpacity>
       ))}
     </ScrollView>
@@ -158,7 +156,6 @@ const ScoreTicker = () => {
 const styles = StyleSheet.create({
   scrollView: {
     height: hp("12.5%"),
-    // backgroundColor: "blue",
   },
   matchContainer: {
     backgroundColor: COLORS.primary,
@@ -176,7 +173,6 @@ const styles = StyleSheet.create({
     borderRightColor: COLORS.secondary,
     borderTopColor: COLORS.white,
     borderLeftColor: COLORS.white,
-    // backgroundColor: "green",
   },
   infoContainer: {
     justifyContent: "center",
@@ -197,10 +193,9 @@ const styles = StyleSheet.create({
     color: COLORS.white,
   },
   teamIconContainer: {
-    // paddingHorizontal: wp("1%"),
+    paddingVertical: hp("0.2%"),
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: "pink",
   },
   teamIcon: {
     width: hp("5%"),

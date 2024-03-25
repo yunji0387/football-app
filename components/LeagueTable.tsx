@@ -12,6 +12,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { COLORS } from "@/constants/theme";
+import HeaderText from "@/components/HeaderText";
 
 interface LeagueTableRow {
   id: string;
@@ -256,6 +257,7 @@ export default function LeagueTable() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <HeaderText title="Standings" />
       <View style={styles.tableHeader}>
         <View style={styles.statsContainer}></View>
         <Text style={[styles.teamContainer, {fontWeight: "bold"}]}>Team</Text>
