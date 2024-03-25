@@ -104,8 +104,12 @@ const styles = StyleSheet.create({
   cardContainer: {
     width: wp("96%"),
     height: hp("10%"),
-    marginVertical: wp("1%"),
-    // backgroundColor: "green",
+    alignItems: "center",
+    justifyContent: "center",
+    marginVertical: hp("1%"),
+    // padding: wp("2%"),
+    gap: wp("2%"),
+    // backgroundColor: COLORS.darkGrey,
     flex: 1,
     flexDirection: "row",
   },
@@ -119,7 +123,7 @@ const styles = StyleSheet.create({
     // backgroundColor: "blue",
     flex: 1,
     flexDirection: "column",
-    marginLeft: wp("2%"),
+    // marginLeft: wp("2%"),
   },
   category: {
     fontSize: hp("2.5%"),
