@@ -26,6 +26,7 @@ export default function stats() {
         <StyledBtn to="" title="Team Stats" />
         <LeagueTable />
         <StatsTable isPlayerStats={true} title="Player Stats" />
+        <StatsTable isPlayerStats={false} title="Team Stats" />
       </ScrollView>
     </SafeAreaView>
   );
