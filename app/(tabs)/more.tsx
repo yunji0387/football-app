@@ -22,22 +22,13 @@ export default function more() {
         <StyledBtn to="" title="Login / Sign Up" />
         <HeaderText title="Settings" />
         <StyledBtn to="" title="Notifications" styleNum={2} />
-        <StyledBtn to="" title="Clear Cache" />
-        <StyledBtn to="" title="Theme" />
+        <StyledBtn to="" title="Clear Cache" styleNum={2} />
+        <StyledBtn to="" title="Theme" styleNum={2} />
         <HeaderText title="Other" />
-        <StyledBtn to="" title="Contact Us" />
-        <StyledBtn to="" title="Term & Conditions" />
-        <StyledBtn to="" title="Privacy Policy" />
-        <StyledBtn to="" title="Current Version" />
-        {/* <View style={styles.container}>
-          <Text style={styles.title}>More</Text>
-          <View
-            style={styles.separator}
-            lightColor="#eee"
-            darkColor="rgba(255,255,255,0.1)"
-          />
-          <EditScreenInfo path="app/(tabs)/index.tsx" />
-        </View> */}
+        <StyledBtn to="" title="Contact Us" styleNum={2} />
+        <StyledBtn to="" title="Term & Conditions" styleNum={2} />
+        <StyledBtn to="" title="Privacy Policy" styleNum={2} />
+        <StyledBtn to="" title="Current Version" styleNum={2} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -51,19 +42,5 @@ const styles = StyleSheet.create({
     paddingBottom: hp("9%"),
     alignItems: "center",
     justifyContent: "center",
-  },
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: "80%",
   },
 });
