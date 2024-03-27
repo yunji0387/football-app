@@ -21,6 +21,7 @@ export default function stats() {
         <TopLogo />
         <HeaderText title="Statistics" />
         <TopStats />
+        <StyledBtn to="player" title="Search Player" />
         <StyledBtn to="" title="Full Standings" />
         <StyledBtn to="" title="Player Stats" />
         <StyledBtn to="" title="Team Stats" />
