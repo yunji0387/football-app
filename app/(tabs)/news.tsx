@@ -20,7 +20,7 @@ export default function news() {
             >
               <TopLogo />
               <HeaderText title="News " />
-              <StyledBtn to="" title="News" />
+              <StyledBtn to="" title="General" />
               <StyledBtn to="" title="Feature" />
               <StyledBtn to="" title="Transfer" />
               <StyledBtn to="" title="Statistics" />
