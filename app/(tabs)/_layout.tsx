@@ -133,6 +133,26 @@ export default function TabLayout() {
           },
         }}
       />
+
+      <Tabs.Screen
+        name="player/index"
+        options={{
+          title: "",
+          href: null,
+          tabBarIcon: ({ focused }: { focused: boolean }) => {
+            return (
+              <View style={getTabBarIconContainerStyle(focused)}>
+                <Image
+                  source={icons.logo}
+                  contentFit="contain"
+                  style={getTabIconStyle(focused)}
+                />
+                <Text style={getTabLabelStyle(focused)}>player</Text>
+              </View>
+            );
+          },
+        }}
+      />
     </Tabs>
   );
 }

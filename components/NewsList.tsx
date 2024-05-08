@@ -24,13 +24,13 @@ interface NewsItem {
 const mockNewsItems: NewsItem[] = [
   {
     id: "1",
-    category: "News",
+    category: "General",
     title: "Sherwood: Sheff Utd clash shows players care",
     imageUrl: "https://via.placeholder.com/150",
   },
   {
     id: "2",
-    category: "News",
+    category: "General",
     title: "This week in the Premier League",
     imageUrl: "https://via.placeholder.com/150",
   },
