@@ -13,7 +13,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
-    "@expo/vector-icons": "^14.0.0",
+    "@expo/vector-icons": "^14.0.4",
     "@react-navigation/native": "^6.1.17",
     "@types/react-native-snap-carousel": "^3.8.11",
     "expo": "~52.0.5",
