@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.4",
-    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/native": "^6.1.18",
     "@types/react-native-snap-carousel": "^3.8.11",
     "expo": "~52.0.23",
     "expo-font": "~11.10.3",
