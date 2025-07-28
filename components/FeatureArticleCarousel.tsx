@@ -11,7 +11,7 @@ import {
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
-import Carousel, { Pagination } from "react-native-snap-carousel";
+import Carousel from "react-native-reanimated-carousel";
 import { COLORS } from "@/constants/theme";
 
 const articleImg = require("../assets/images/articleImg.png") as string;
@@ -90,28 +90,38 @@ export default function FeatureArticleCarousel() {
     );
   };
 
+  const PaginationComponent = () => {
+    return (
+      <View style={styles.paginationContainer}>
+        {articles.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.paginationDot,
+              index === activeSlide
+                ? styles.activePaginationDot
+                : styles.inactivePaginationDot,
+            ]}
+          />
+        ))}
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Carousel
+        width={screenWidth}
+        height={hp("35%")}
         data={articles}
         renderItem={renderItem}
-        sliderWidth={screenWidth}
-        itemWidth={screenWidth}
         onSnapToItem={(index) => setActiveSlide(index)}
-        vertical={false}
-        autoplay={true}
-        // loop={true}
+        autoPlay={true}
+        autoPlayInterval={3000}
+        loop={true}
+        scrollAnimationDuration={500}
       />
-      <Pagination
-        dotsLength={articles.length}
-        activeDotIndex={activeSlide}
-        containerStyle={styles.paginationContainer}
-        dotContainerStyle={styles.paginationDotContainer}
-        dotStyle={styles.paginationDot}
-        inactiveDotStyle={styles.inactivePaginationDot}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
+      <PaginationComponent />
     </View>
   );
 }
@@ -125,7 +135,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   slide: {
-    maxHeight: hp("40%"),
+    maxHeight: hp("35%"),
     margin: hp("1%"),
   },
   image: {
@@ -158,20 +168,24 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   paginationContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     height: hp("3%"),
     paddingVertical: 0,
     marginVertical: 0,
   },
-  paginationDotContainer: {
-    width: hp("3%"),
-    height: hp("3%"),
-  },
   paginationDot: {
     width: hp("1%"),
     height: hp("1%"),
+    borderRadius: hp("0.5%"),
+    marginHorizontal: wp("1%"),
+  },
+  activePaginationDot: {
     backgroundColor: COLORS.white,
   },
   inactivePaginationDot: {
-    // Define styles for inactive dots if needed
+    backgroundColor: COLORS.white,
+    opacity: 0.4,
   },
 });
