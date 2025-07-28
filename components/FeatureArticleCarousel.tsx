@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  ScrollView,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
-import Carousel from "react-native-reanimated-carousel";
 import { COLORS } from "@/constants/theme";
 
 const articleImg = require("../assets/images/articleImg.png") as string;
@@ -65,11 +65,13 @@ export default function FeatureArticleCarousel() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const screenWidth = Dimensions.get("window").width;
+  const scrollViewRef = useRef<ScrollView>(null);
 
-  const renderItem = ({ item }: { item: Article }) => {
+  const renderItem = (item: Article, index: number) => {
     return (
       <TouchableOpacity
-        style={styles.slide}
+        key={item.id}
+        style={[styles.slide, { width: screenWidth }]}
         onPress={() => {
           // TODO: handle press, navigate to article detail
           console.log("Article pressed:", item.id);
@@ -88,6 +90,12 @@ export default function FeatureArticleCarousel() {
         </View>
       </TouchableOpacity>
     );
+  };
+
+  const handleScroll = (event: any) => {
+    const contentOffset = event.nativeEvent.contentOffset;
+    const currentSlide = Math.round(contentOffset.x / screenWidth);
+    setActiveSlide(currentSlide);
   };
 
   const PaginationComponent = () => {
@@ -110,17 +118,16 @@ export default function FeatureArticleCarousel() {
 
   return (
     <View style={styles.container}>
-      <Carousel
-        width={screenWidth}
-        height={hp("35%")}
-        data={articles}
-        renderItem={renderItem}
-        onSnapToItem={(index) => setActiveSlide(index)}
-        autoPlay={true}
-        autoPlayInterval={3000}
-        loop={true}
-        scrollAnimationDuration={500}
-      />
+      <ScrollView
+        ref={scrollViewRef}
+        horizontal={true}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        onMomentumScrollEnd={handleScroll}
+        style={styles.scrollView}
+      >
+        {articles.map((item, index) => renderItem(item, index))}
+      </ScrollView>
       <PaginationComponent />
     </View>
   );
@@ -134,9 +141,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  scrollView: {
+    height: hp("35%"),
+  },
   slide: {
     maxHeight: hp("35%"),
     margin: hp("1%"),
+    paddingHorizontal: wp("2%"),
   },
   image: {
     width: "100%",
