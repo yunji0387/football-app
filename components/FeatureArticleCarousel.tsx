@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Dimensions,
+  ScrollView,
 } from "react-native";
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
 import { Image } from "expo-image";
-import Carousel, { Pagination } from "react-native-snap-carousel";
 import { COLORS } from "@/constants/theme";
 
 const articleImg = require("../assets/images/articleImg.png") as string;
@@ -65,11 +65,13 @@ export default function FeatureArticleCarousel() {
 
   const [activeSlide, setActiveSlide] = useState(0);
   const screenWidth = Dimensions.get("window").width;
+  const scrollViewRef = useRef<ScrollView>(null);
 
-  const renderItem = ({ item }: { item: Article }) => {
+  const renderItem = (item: Article, index: number) => {
     return (
       <TouchableOpacity
-        style={styles.slide}
+        key={item.id}
+        style={[styles.slide, { width: screenWidth }]}
         onPress={() => {
           // TODO: handle press, navigate to article detail
           console.log("Article pressed:", item.id);
@@ -90,28 +92,43 @@ export default function FeatureArticleCarousel() {
     );
   };
 
+  const handleScroll = (event: any) => {
+    const contentOffset = event.nativeEvent.contentOffset;
+    const currentSlide = Math.round(contentOffset.x / screenWidth);
+    setActiveSlide(currentSlide);
+  };
+
+  const PaginationComponent = () => {
+    return (
+      <View style={styles.paginationContainer}>
+        {articles.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.paginationDot,
+              index === activeSlide
+                ? styles.activePaginationDot
+                : styles.inactivePaginationDot,
+            ]}
+          />
+        ))}
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-      <Carousel
-        data={articles}
-        renderItem={renderItem}
-        sliderWidth={screenWidth}
-        itemWidth={screenWidth}
-        onSnapToItem={(index) => setActiveSlide(index)}
-        vertical={false}
-        autoplay={true}
-        // loop={true}
-      />
-      <Pagination
-        dotsLength={articles.length}
-        activeDotIndex={activeSlide}
-        containerStyle={styles.paginationContainer}
-        dotContainerStyle={styles.paginationDotContainer}
-        dotStyle={styles.paginationDot}
-        inactiveDotStyle={styles.inactivePaginationDot}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-      />
+      <ScrollView
+        ref={scrollViewRef}
+        horizontal={true}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        onMomentumScrollEnd={handleScroll}
+        style={styles.scrollView}
+      >
+        {articles.map((item, index) => renderItem(item, index))}
+      </ScrollView>
+      <PaginationComponent />
     </View>
   );
 }
@@ -124,9 +141,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  scrollView: {
+    height: hp("35%"),
+  },
   slide: {
-    maxHeight: hp("40%"),
+    maxHeight: hp("35%"),
     margin: hp("1%"),
+    paddingHorizontal: wp("2%"),
   },
   image: {
     width: "100%",
@@ -158,20 +179,24 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   paginationContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
     height: hp("3%"),
     paddingVertical: 0,
     marginVertical: 0,
   },
-  paginationDotContainer: {
-    width: hp("3%"),
-    height: hp("3%"),
-  },
   paginationDot: {
     width: hp("1%"),
     height: hp("1%"),
+    borderRadius: hp("0.5%"),
+    marginHorizontal: wp("1%"),
+  },
+  activePaginationDot: {
     backgroundColor: COLORS.white,
   },
   inactivePaginationDot: {
-    // Define styles for inactive dots if needed
+    backgroundColor: COLORS.white,
+    opacity: 0.4,
   },
 });
