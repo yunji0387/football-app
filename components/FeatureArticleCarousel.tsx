@@ -92,7 +92,7 @@ export default function FeatureArticleCarousel() {
     );
   };
 
-  const handleScroll = (event: any) => {
+  const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
     const contentOffset = event.nativeEvent.contentOffset;
     const currentSlide = Math.round(contentOffset.x / screenWidth);
     setActiveSlide(currentSlide);
