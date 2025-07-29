@@ -11,6 +11,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from "react-native-responsive-screen";
+import { NativeSyntheticEvent, NativeScrollEvent } from "react-native";
 import { Image } from "expo-image";
 import { COLORS } from "@/constants/theme";
 
@@ -98,6 +99,12 @@ export default function FeatureArticleCarousel() {
     setActiveSlide(currentSlide);
   };
 
+  const handleScrollEnd = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const contentOffset = event.nativeEvent.contentOffset;
+    const currentSlide = Math.round(contentOffset.x / screenWidth);
+    setActiveSlide(currentSlide);
+  };
+
   const PaginationComponent = () => {
     return (
       <View style={styles.paginationContainer}>
@@ -123,7 +130,8 @@ export default function FeatureArticleCarousel() {
         horizontal={true}
         pagingEnabled={true}
         showsHorizontalScrollIndicator={false}
-        onMomentumScrollEnd={handleScroll}
+        onScrollEndDrag={handleScrollEnd}
+        onMomentumScrollEnd={handleScrollEnd}
         style={styles.scrollView}
       >
         {articles.map((item, index) => renderItem(item, index))}
