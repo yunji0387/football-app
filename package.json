@@ -24,7 +24,7 @@
     "expo-splash-screen": "~0.30.9",
     "expo-status-bar": "~1.12.1",
     "expo-system-ui": "~2.9.4",
-    "expo-web-browser": "~12.8.2",
+    "expo-web-browser": "~14.2.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "react-native": "^0.80.0",
