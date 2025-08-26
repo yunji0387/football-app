@@ -24,7 +24,7 @@
     "expo-status-bar": "~2.2.3",
     "expo-system-ui": "~5.0.10",
     "expo-web-browser": "~14.2.0",
-    "hermes-parser": "^0.30.0",
+    "hermes-parser": "^0.31.0",
     "react": "19.1.1",
     "react-dom": "19.1.0",
     "react-native": "^0.80.1",
