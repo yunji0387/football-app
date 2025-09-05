@@ -27,7 +27,7 @@
     "hermes-parser": "^0.32.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "react-native": "^0.80.1",
+    "react-native": "^0.81.1",
     "react-native-reanimated": "~4.1.0",
     "react-native-responsive-screen": "^1.4.2",
     "react-native-safe-area-context": "5.5.2",
