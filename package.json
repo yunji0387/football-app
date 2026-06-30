@@ -35,7 +35,7 @@
     "react-native-web": "~0.21.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.0",
+    "@babel/core": "^7.29.6",
     "@types/react": "^19.2.14",
     "jest": "^30.3.0",
     "jest-expo": "~55.0.9",
