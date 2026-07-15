@@ -7,10 +7,7 @@ import {
   Dimensions,
   ScrollView,
 } from "react-native";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import { NativeSyntheticEvent, NativeScrollEvent } from "react-native";
 import { Image } from "expo-image";
 import { COLORS } from "@/constants/theme";

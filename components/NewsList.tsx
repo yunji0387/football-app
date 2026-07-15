@@ -8,10 +8,7 @@ import {
   Dimensions,
 } from "react-native";
 import { Image } from "expo-image";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import { COLORS } from "@/constants/theme";
 
 interface NewsItem {

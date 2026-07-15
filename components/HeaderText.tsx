@@ -1,8 +1,5 @@
 import { StyleSheet, View, Text } from "react-native";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import { COLORS } from "@/constants/theme";
 
 type HeaderTextProps = {
