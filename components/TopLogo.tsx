@@ -1,10 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import { Image } from "expo-image";
 import icons from "../constants/icons";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import { COLORS } from "@/constants/theme";
 
 export default function TopLogo() {

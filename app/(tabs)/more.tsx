@@ -2,10 +2,7 @@ import { ScrollView, StyleSheet } from "react-native";
 import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import StyledBtn from "@/components/StyledBtn";
 
 export default function more() {

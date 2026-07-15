@@ -1,9 +1,6 @@
 import { ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 import TopLogo from "@/components/TopLogo";
 import HeaderText from "@/components/HeaderText";
 import TopStats from "@/components/TopStats";

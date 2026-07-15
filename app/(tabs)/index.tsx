@@ -8,10 +8,7 @@ import SeeMoreButton from "@/components/SeeMoreBtn";
 import FeatureArticleCarousel from "@/components/FeatureArticleCarousel";
 import NewsList from "@/components/NewsList";
 import { SafeAreaView } from 'react-native-safe-area-context';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from "react-native-responsive-screen";
+import { wp, hp } from "@/constants/responsive";
 
 export default function Home() {
   return (
